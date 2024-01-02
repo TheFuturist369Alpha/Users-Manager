@@ -1,0 +1,114 @@
+﻿
+
+
+
+
+
+
+
+
+@model RegisterDTO
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="text-grey">
+    <span>Contacts</span>
+    <i class="fa-solid fa-caret-right"></i>
+    <span>Register</span>
+</div>
+
+<div class="form-container">
+    Have an account? <a asp-action="Login" asp-controller="Account" asp-route-ReturnURL="ReturnURL">Login</a>
+    <h2 class="text-large">Register</h2>
+    <form asp-controller="Account" asp-action="Register" method="post">
+
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="FirstName" class="form-label pt">FirsName</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="FirstName" class="form-input" />
+                <span asp-validation-for="FirstName" class="text-red"></span>
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="LastName" class="form-label pt">Last Name</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="LastName" class="form-input" />
+                <span asp-validation-for="LastName" class="text-red"></span>
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Email" class="form-label pt">Email</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="Email" class="form-input" />
+                <span asp-validation-for="Email" class="text-red"></span>
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="Password" class="form-label pt">Password</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="Password" class="form-input" />
+                <span asp-validation-for="Password" class="text-red"></span>
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="ConfirmPassword" class="form-label pt">Confirm Password</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="ConfirmPassword" class="form-input" />
+                <span asp-validation-for="ConfirmPassword" class="text-red"></span>
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="PhoneNumber" class="form-label pt">Phone Number</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="PhoneNumber" class="form-input" />
+                <span asp-validation-for="PhoneNumber" class="text-red"></span>
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25">
+            </div>
+            <div class="flex-1">
+                <button class="button button-green-back" type="submit">Register</button>
+                <div asp-validation-summary="All" class="text-red">
+                </div>
+                @if (ViewData["Errors"] != null)
+                {
+                    <div class="text-red ml">
+                        <ul>
+                            @foreach (var item in ViewBag.Errors)
+                            {
+                                <li class="ml">@item</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+    </form>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+            integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"
+            integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
