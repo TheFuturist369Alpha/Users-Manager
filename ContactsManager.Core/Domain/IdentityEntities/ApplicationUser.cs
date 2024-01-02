@@ -9,5 +9,8 @@ namespace ContactsManager.Core.Domain.IdentityEntities
 {
     public class ApplicationUser:IdentityUser<Guid>
     {
+        public Guid UserId { get; set;}
+
+        public string Role { get; set; }
     }
 }

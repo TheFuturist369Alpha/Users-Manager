@@ -68,6 +68,8 @@ if (app.Environment.IsDevelopment()){
     app.UseDeveloperExceptionPage();
     Console.WriteLine("Exception page activated");
 }
+app.UseHsts();
+app.UseHttpsRedirection();
 app.Logger.LogDebug("log---Debugging");
 app.Logger.LogInformation("log---Information");
 app.Logger.LogWarning("log---Warning");
